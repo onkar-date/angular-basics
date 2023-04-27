@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <h1>Todo</h1>
+
+      <div class="card mb-3" *ngFor="let item of todos">
+        <div class="card-body">
+          <span> {{ item.name }} </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <h1>Done</h1>
+
+      <div class="card mb-3" *ngFor="let item of done">
+        <div class="card-body">
+          <span> {{ item.name }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

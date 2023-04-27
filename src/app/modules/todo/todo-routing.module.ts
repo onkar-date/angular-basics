@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TodoHomeComponent } from './todo-home/todo-home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'todo-home',
+    component: TodoHomeComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

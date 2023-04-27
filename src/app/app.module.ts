@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlueBackgroundDirective } from './library/directives/blue-background.directive';
+import { FormsModule } from '@angular/forms';
+import { TodoModule } from './modules/todo/todo.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, BlueBackgroundDirective],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, TodoModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
