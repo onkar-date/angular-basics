@@ -1,22 +1,26 @@
-<div class="container-fluid">
+<div class="container-fluid p-5">
   <div class="row">
+    <!-- Todo -->
     <div class="col-6">
-      <h1>Todo</h1>
-
-      <div class="card mb-3" *ngFor="let item of todos">
-        <div class="card-body">
-          <span> {{ item.name }} </span>
-        </div>
+      <div class="d-flex justify-content-between mb-3">
+        <h3>Todo</h3>
+        <button class="btn btn-primary" (click)="addTodo()">Add Todo</button>
       </div>
+      <app-todo-item
+        [todoItems]="todos"
+        (deleteClicked)="deleteItem($event, true)"
+        (markAsDoneClicked)="markAsDone($event)"
+      ></app-todo-item>
     </div>
-    <div class="col-6">
-      <h1>Done</h1>
 
-      <div class="card mb-3" *ngFor="let item of done">
-        <div class="card-body">
-          <span> {{ item.name }} </span>
-        </div>
-      </div>
+    <!-- Done -->
+    <div class="col-6">
+      <h3 class="mb-4">Done</h3>
+      <app-todo-item
+        [todoItems]="done"
+        (deleteClicked)="deleteItem($event, false)"
+        (markAsDoneClicked)="markAsDone($event)"
+      ></app-todo-item>
     </div>
   </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="card shadow mb-3" *ngFor="let item of todoItems">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <span> {{ item.name }} </span>
+      <div>
+        <i
+          role="button"
+          *ngIf="item.isDone === false"
+          class="fa fa-check mx-4 text-success"
+          aria-hidden="true"
+          (click)="markAsDone(item)"
+        ></i>
+        <i
+          role="button"
+          class="fa fa-trash text-danger"
+          aria-hidden="true"
+          (click)="deleteItem(item)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Todo</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.close(false)"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="todoForm">
+    <div class="mb-3">
+      <label for="desc" class="form-label"> Description </label>
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        id="desc"
+        name="desc"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div
+      class="text-danger"
+      *ngIf="
+        todoForm.controls['name'].dirty && todoForm.controls['name'].invalid
+      "
+    >
+      *required field
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close(false)"
+  >
+    Close
+  </button>
+  <button type="button" class="btn btn-primary" (click)="submit()">
+    Submit
+  </button>
+</div>

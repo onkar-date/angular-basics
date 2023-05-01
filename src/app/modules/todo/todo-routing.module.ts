@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'todo-home',
     component: TodoHomeComponent,
   },
+  // {
+  //   path: '**',
+  //   redirectTo: 'todo-home',
+  // },
 ];
 
 @NgModule({
